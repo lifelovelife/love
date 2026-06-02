@@ -555,17 +555,23 @@
                 <span></span>
             </div>
         </section>
-        
+
+        <audio id="burbuja">
+            <source src="burbuja.mp3" type="audio/mpeg">
+        </audio>
+            
         <script>
             const imagenes = [
+                'img/bonding.jpg',
                 'img/blonegmor.jpg',
                 'img/cabbage.jpg',
                 'img/cherry_cordial_candy.jpg',
                 'img/conejo.jpg',
                 'img/shoutao.jpg',
-                'img/silica_gel.jpg',
-                ''
+                'img/silica_gel.jpg'
             ];
+
+            const click = document.getElementById("burbuja");
 
             const fondo = span => {
                 span.style.backgroundImage = `url(${imagenes[Math.floor(Math.random() * imagenes.length)]})`;
@@ -576,6 +582,7 @@
                 span.addEventListener('mouseenter', () => fondo(span));
                 span.addEventListener('click', () => {
                     span.style.backgroundImage = 'none';
+                    click.play(); 
                 })
             });
 
