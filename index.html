@@ -15,6 +15,28 @@
             font-weight: normal;
             font-style: normal;
         }
+        .rastro {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle, #fff, #fbfaee00);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: vanish .7s ease-out forwards;
+            }
+
+            @keyframes vanish {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+                filter: drop-shadow(0 0 8px hsl(54, 64%, 96%));
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(.5);
+                opacity: 0;
+            }
+            }
         body {
             cursor: grab;
             overflow: hidden;
@@ -63,6 +85,7 @@
     </style>
 </head>
 <body>
+    <div class="cursor"></div>
     <section class="info">
         <div>
             <span>Nicolle Bustos</span>
@@ -504,6 +527,22 @@
                     span.style.backgroundRepeat = 'no-repeat';
                 });
             });
-            </script>
+
+            document.addEventListener("mousemove", (e) => {
+                const container = document.querySelector(".cursor");
+                const dot = document.createElement("div");
+                
+                dot.classList.add("rastro");
+                
+                dot.style.left = `${e.clientX}px`;
+                dot.style.top = `${e.clientY}px`;
+                
+                container.appendChild(dot);
+                
+                setTimeout(() => {
+                    dot.remove();
+                }, 600); 
+                });
+        </script>
 </body>
 </html>
