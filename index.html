@@ -3,132 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A paradise for seafood lovers</title>
-    <link rel="icon" type="image/png" href="favi.png">
+    <title>nicolle.love</title>
     <style>
+        :root {
+            --cell-size: calc((100vh) / 16);
+        }
         body {
             overflow: hidden;
-            height: 100vh;
-            background-image: radial-gradient(hsl(214, 26%, 98%) 40%, hsl(222, 50%, 90%) 100%);
-            margin: 0;
-            color: #593635;
             user-select: none;
+            height: 100vh;
+            margin: 0;
+            background: hsl(270, 50%, 95%);
             font-family: sans-serif;
             font-size: 14px;
+            color: #593635;
             line-height: 1.5;
         }
-        a {color: orchid;}
-        #clock {
-            opacity: .5;
+        .info {
+            display: flex;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
         }
-        div {
-            place-items: center;
+        .images > div {
             display: grid;
-            grid-template-columns: repeat(22, 6.25vh);
+            grid-template-columns: repeat(22, var(--cell-size));
+            width: fit-content;
+            height: 100%;
         }
-        div span {
-            height: 6.25vh;
-            line-height: 1.2;
-            aspect-ratio: 1;
+        .images > div span {
+            width: var(--cell-size);
+            height: var(--cell-size);
             transition: .25s ease-out;
         }
-        div span:hover {
-            background-color: #ffffffbf;
+        .images > div span:hover {
+            background-color: #ffffff;
         }
         .images .span_bg {
-            background-size: 100% 100%;
-            animation: blink-animation-2 4s ease-out infinite;
-            -webkit-animation: blink-animation-2 4s ease-out infinite;
-        }
-        .images .blink {
-            background-color: white;
-            animation: blink-animation 4s ease-out infinite;
-            -webkit-animation: blink-animation 4s ease-out infinite;
-        }
-        .images .left {
-            background-position: left;
-        }
-        .images .right {
-            background-position: right;
-        }
-        @keyframes blink-animation {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: .75;
-            }
-        }
-        @-webkit-keyframes blink-animation {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: .75;
-            }
-        }
-        @keyframes blink-animation-2 {
-            0%, 100% {
-                transform: none;
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        @-webkit-keyframes blink-animation-2 {
-            0%, 100% {
-                transform: none;
-            }
-            50% {
-                transform: scale(1.1);
-            }
+            background: white;
+            animation: latido 4s ease-out infinite;
+            -webkit-animation: latido 4s ease-out infinite;
         }
         .images {
-            margin: 0 auto;
-            display: table;
-        }
-        /*
-        div:hover::before {
-            content: '';
-            width: 48px;
-            height: 48px;
-        }
-        */
-        .text {
-            margin: 24px;
-            position: absolute;
-            bottom: 0;
-        }
-        .text p {
             display: grid;
+            grid-template-rows: repeat(16, 1fr);
+            height: 100vh;
+            justify-content: center;
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
+    <section class="info">
+        nicolle.love
+    </section>
         <section class="images">
-
             <!-- 1 -->
             <div>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cf/Pears.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b0/A_small_white_feeding_on_a_lavender_flower.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/da/Iceberg_lettuce_in_SB.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ec/Pickled_cucumber.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Ripe_Banana_Pepper_Plant.jpg);"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Ripe_Banana_Pepper_Plant.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ec/Pickled_cucumber.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/da/Iceberg_lettuce_in_SB.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b0/A_small_white_feeding_on_a_lavender_flower.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cf/Pears.jpg);"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
                 <span></span>
                 <span></span>
              </div>
@@ -136,258 +88,258 @@
             <!-- 2 -->
             <div>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Australia_green_tree_frog_%28Litoria_caerulea%29_crop.jpg);"></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg left" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/35/Yoga_in_Bryant_Park_%2801194%29.jpg); background-size: 200% 100%;"></span>
-                <span class="span_bg right" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/35/Yoga_in_Bryant_Park_%2801194%29.jpg); background-size: 200% 100%;"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Australia_green_tree_frog_%28Litoria_caerulea%29_crop.jpg);"></span>
+                <span class="span_bg left"></span>
+                <span class="span_bg right"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
             </div>
 
             <!-- 3 -->
             <div>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b6/Chicago_River_dyed_green%2C_focus_on_river.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Persimmon_0375.jpg)"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2e/Chou_1.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7c/%E5%A4%A7%E8%91%89_%E8%8C%A8%E5%9F%8E_2017_%2833437036095%29.jpg);"></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7c/%E5%A4%A7%E8%91%89_%E8%8C%A8%E5%9F%8E_2017_%2833437036095%29.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2e/Chou_1.jpg);"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Persimmon_0375.jpg)"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b6/Chicago_River_dyed_green%2C_focus_on_river.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
                 <span></span>
             </div>
 
             <!-- 4 -->
             <div>
-                <span class="blink"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Plagiomnium_affine_laminazellen.jpeg);"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/28/Special_Natural_Monument%2C_the_habitat_of_Pagrus_major%2C_TAINOURA.JPG);"></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Mount_Yakushi_from_Mount_North-Yakushi_1997-08-11.jpg);"></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Mount_Yakushi_from_Mount_North-Yakushi_1997-08-11.jpg);"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/28/Special_Natural_Monument%2C_the_habitat_of_Pagrus_major%2C_TAINOURA.JPG);"></span>
+                <span class="span_bg"></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Plagiomnium_affine_laminazellen.jpeg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
             </div>
             <!-- 5 -->
             <div>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ef/Kagay-anon_Kinilaw.jpg)"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b7/Tachibanayama02.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg left" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Napolitanas_-_2008.JPG); background-size: 200% 100%;"></span>
-                <span class="span_bg right" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Napolitanas_-_2008.JPG); background-size: 200% 100%;"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b7/Tachibanayama02.jpg);"></span>
+                <span class="span_bg left"></span>
+                <span class="span_bg right"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ef/Kagay-anon_Kinilaw.jpg)"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
             </div>
             <!-- 6 -->
             <div>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a5/Flickr_-_cyclonebill_-_G%C3%A5sebryst.jpg);"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d3/Lesser_and_Greater_Flamingo%2C_Nakuru%2C_KE_imported_from_iNaturalist_photo_314619601.jpg);"></span>
                 <span></span>
                 <span></span>
+                <span class="span_bg"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d3/Lesser_and_Greater_Flamingo%2C_Nakuru%2C_KE_imported_from_iNaturalist_photo_314619601.jpg);"></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a5/Flickr_-_cyclonebill_-_G%C3%A5sebryst.jpg);"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
             </div>
 
             <!-- 7 -->
             <div>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fe/Poire_belle_H%C3%A9l%C3%A8ne.jpg);"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0f/Persimmons_at_Bilpin-Pine_Crest.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/43/Ukrainian_Policemen_in_central_Kiev.jpg);"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/43/Ukrainian_Policemen_in_central_Kiev.jpg);"></span>
-                <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0f/Persimmons_at_Bilpin-Pine_Crest.jpg);"></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fe/Poire_belle_H%C3%A9l%C3%A8ne.jpg);"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
             </div>
 
             <!-- 8 -->
             <div>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a1/Safed_cheese.jpg)"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Sago_starch_filter_PNG.jpg);"></span>
-                <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Bluewater3753.JPG); background-position: top left; background-size: 200% 200%;"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Bluewater3753.JPG); background-position: top right; background-size: 200% 200%;"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Sago_starch_filter_PNG.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a1/Safed_cheese.jpg)"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
             </div>
 
             <!-- 9 -->
             <div>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7a/Blue_Raspberry_Frozen_Yogurt_with_White_Chocolate_Chips%2C_Coconut%2C_and_Cherries.jpg);"></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/86/Lactarius_indigo_48568_edit.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
-                <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Bluewater3753.JPG); background-position: bottom left; background-size: 200% 200%;"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Bluewater3753.JPG); background-position: bottom right; background-size: 200% 200%;"></span>
-                <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/86/Lactarius_indigo_48568_edit.jpg);"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7a/Blue_Raspberry_Frozen_Yogurt_with_White_Chocolate_Chips%2C_Coconut%2C_and_Cherries.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             <!-- 10 -->
             <div>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0e/Narcisa_0012.JPG);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/18/Purple_Rose1.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/96/Sakura_and_Moss_Pink_-_%E6%A1%9C%28%E3%81%95%E3%81%8F%E3%82%89%29%E3%81%A8%E8%8A%9D%E6%A1%9C%28%E3%81%97%E3%81%B0%E3%81%96%E3%81%8F%E3%82%89%29.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/96/Sakura_and_Moss_Pink_-_%E6%A1%9C%28%E3%81%95%E3%81%8F%E3%82%89%29%E3%81%A8%E8%8A%9D%E6%A1%9C%28%E3%81%97%E3%81%B0%E3%81%96%E3%81%8F%E3%82%89%29.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/18/Purple_Rose1.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0e/Narcisa_0012.JPG);"></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
                 <span></span>
             </div>
 
             <!-- 11 -->
             <div>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/55/Pseudanthias_pascalus.jpg);"></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e5/Eleven_long_purple_eggplants.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e5/Eleven_long_purple_eggplants.jpg);"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/55/Pseudanthias_pascalus.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
             </div>
             
@@ -395,24 +347,24 @@
             <div>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Baby_eggplant_tsukemono_by_wilbanks_in_Nishiki-ichiba%2C_Kyoto.jpg);"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2d/Iris_latifolia-Lac_Aule-Laruns-2522~2013_07_29.JPG);"></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2d/Iris_latifolia-Lac_Aule-Laruns-2522~2013_07_29.JPG);"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Baby_eggplant_tsukemono_by_wilbanks_in_Nishiki-ichiba%2C_Kyoto.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
@@ -422,22 +374,22 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/28/16-09-17-WikiLovesCocktails-Zutaten-Img0163.jpg);"></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7f/Agraz..jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7f/Agraz..jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/28/16-09-17-WikiLovesCocktails-Zutaten-Img0163.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -449,20 +401,20 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4d/Jules_Plisson_Stade_francais_2012-03-03.jpg);"></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg left" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f0/HK_%E4%BD%90%E6%95%A6_Jordan_%E5%BD%8C%E6%95%A6%E9%81%93_219_Nathan_Road_%E8%8E%8A%E5%A3%AB%E5%80%AB%E6%95%A6%E5%BB%A3%E5%A0%B4_Chuang%27s_Jordan_Plaza_shop_%E6%96%B0%E6%96%B0%E9%85%92%E6%A8%93_Sun_Sun_Restaurant_food_sweet_%E8%93%AE%E8%93%89_Lotus_seed_paste_%E5%A3%BD%E6%A1%83%E5%8C%85_Peach_buns_December_2021_SS2_04.jpg); background-size: 200% 100%;"></span>
-                <span class="span_bg right" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f0/HK_%E4%BD%90%E6%95%A6_Jordan_%E5%BD%8C%E6%95%A6%E9%81%93_219_Nathan_Road_%E8%8E%8A%E5%A3%AB%E5%80%AB%E6%95%A6%E5%BB%A3%E5%A0%B4_Chuang%27s_Jordan_Plaza_shop_%E6%96%B0%E6%96%B0%E9%85%92%E6%A8%93_Sun_Sun_Restaurant_food_sweet_%E8%93%AE%E8%93%89_Lotus_seed_paste_%E5%A3%BD%E6%A1%83%E5%8C%85_Peach_buns_December_2021_SS2_04.jpg); background-size: 200% 100%;"></span>
+                <span class="span_bg left"></span>
+                <span class="span_bg right"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4d/Jules_Plisson_Stade_francais_2012-03-03.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -476,17 +428,18 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
-                <span></span>
-                <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cd/Rosa_Queen_Elizabeth1ZIXIETTE.jpg);"></span><span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cd/Rosa_Queen_Elizabeth1ZIXIETTE.jpg);"></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span></span>
+                <span></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -502,16 +455,16 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
                 <span></span>
                 <span></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a7/Lake_Hillier_2_Middle_Island_Recherche_Archipelago_NR_IV-2011.JPG);"></span>
-                <span class="span_bg left" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/74/2012-kruger-albino-elephant.jpg); background-size: 200% 100%;"></span>
-                <span class="span_bg right" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/74/2012-kruger-albino-elephant.jpg); background-size: 200% 100%;"></span>
-                <span class="span_bg" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a7/Lake_Hillier_2_Middle_Island_Recherche_Archipelago_NR_IV-2011.JPG);"></span>
+                <span></span>
+                <span class="span_bg"></span>
                 <span></span>
                 <span></span>
-                <span class="blink"></span>
+                <span class="span_bg"></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -520,36 +473,5 @@
                 <span></span>
             </div>
         </section>
-        <section class="text">
-            <p>
-                <span id="clock"></span>
-                <span>Nicolle Bustos</span>
-                <span>Designer</span>
-                <span>HTML writer</span>
-                <span>Based in Colombia</span><br>
-                <span><a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a></span>
-                <span style="opacity: .4;">,  , 𖧧 , ,, 𖧧 ,, ,𖧧 ,  ,𖧧 ,, ,𖧧  , ,</span>
-            </p>
-        </section>
-
-    <script>
-        function updateBogotaTime() {
-            const now = new Date();
-            
-            const bogota = now.toLocaleTimeString("en-US", {
-            timeZone: "America/Bogota",
-            day: '2-digit',
-            month: 'short',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-            });
-
-            document.getElementById('clock').textContent = bogota;
-        }
-
-        setInterval(updateBogotaTime, 1000);
-        updateBogotaTime();
-    </script>
 </body>
 </html>
