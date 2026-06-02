@@ -7,7 +7,7 @@
     <title>Nicolle Bustos</title>
     <style>
         :root {
-            --cell-size: calc((100vh) / 16);
+            --medida-celda: calc((100vh) / 16);
         }
         @font-face {
             font-family: 'Tex Gyre Heros';
@@ -16,6 +16,7 @@
             font-style: normal;
         }
         body {
+            cursor: grab;
             overflow: hidden;
             user-select: none;
             height: 100vh;
@@ -46,8 +47,8 @@
             height: 100%;
         }
         .imagenes > div span {
-            width: var(--cell-size);
-            height: var(--cell-size);
+            width: var(--medida-celda);
+            height: var(--medida-celda);
             
         }
         .imagenes > div .span_bg {
@@ -469,8 +470,8 @@
                 <span></span>
                 <span></span>
                 <span class="span_bg"></span>
-                <span></span>
-                <span></span>
+                <span class="span_bg"></span>
+                <span class="span_bg"></span>
                 <span class="span_bg"></span>
                 <span></span>
                 <span></span>
