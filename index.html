@@ -9,47 +9,49 @@
         :root {
             --cell-size: calc((100vh) / 16);
         }
+        @font-face {
+            font-family: 'Tex Gyre Heros';
+            src: url('fuentes/texgyreheros-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
         body {
             overflow: hidden;
             user-select: none;
             height: 100vh;
             margin: 0;
             background: hsl(270, 50%, 95%);
-            font-family: sans-serif;
+            font-family: 'Tex Gyre Heros', sans-serif;
             font-size: 14px;
             color: #593635;
+            letter-spacing: .5px;
             line-height: 1.5;
         }
-        .info {
+        .info div {
             display: flex;
             flex-direction: column;
             position: absolute;
-            width: 100vw;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
         }
         a {
             color: hsl(270, 50%, 65%);
         }
         .images > div {
             display: grid;
-            grid-template-columns: repeat(22, var(--cell-size));
+            grid-template-columns: repeat(22, 1fr);
             width: fit-content;
             height: 100%;
         }
         .images > div span {
             width: var(--cell-size);
             height: var(--cell-size);
-            transition: .25s ease-out;
-        }
-        .images > div span:hover {
-            background-color: #ffffff;
+            
         }
         .images > div .span_bg {
             background: white;
-            animation: latido 4s ease-out infinite;
-            -webkit-animation: latido 4s ease-out infinite;
         }
         .images {
             display: grid;
@@ -61,8 +63,10 @@
 </head>
 <body>
     <section class="info">
-        <span>Nicolle Bustos</span>
-        <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
+        <div>
+            <span>Nicolle Bustos</span>
+            <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
+        </div>
     </section>
         <section class="images">
             <!-- 1 -->
@@ -479,5 +483,26 @@
                 <span></span>
             </div>
         </section>
+        <script>
+            const images = [
+                'img/albaricoques.jpg',
+                'img/cabbage.jpg',
+                'img/cherry_cordial_candy.jpg',
+                'img/mango_pudding.jpg',
+                'img/mantecadas.jpg',
+                'img/shoutao.jpg',
+                'img/silica_gel.jpg'
+            ];
+
+            document.querySelectorAll('.span_bg').forEach(span => {
+                span.addEventListener('mouseenter', () => {
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    span.style.backgroundImage = `url(${randomImage})`;
+                    span.style.backgroundSize = 'cover';
+                    span.style.backgroundPosition = 'center';
+                    span.style.backgroundRepeat = 'no-repeat';
+                });
+            });
+            </script>
 </body>
 </html>
