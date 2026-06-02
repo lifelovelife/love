@@ -73,6 +73,12 @@
             height: var(--medida-celda);
             
         }
+        .imagenes span:not(.span_bg) {
+            transition: .3s ease-out;
+        }
+        .imagenes span:not(.span_bg):hover {
+            background: hsla(0, 0%, 100%, .3);
+        }
         .imagenes > div .span_bg {
             background: hsl(270, 50%, 90%);
         }
