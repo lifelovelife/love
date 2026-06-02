@@ -104,7 +104,6 @@
         .corazon > div span {
             width: var(--medida-celda);
             height: var(--medida-celda);
-            
         }
         .corazon > div .span_bg::before {
             position: relative;
@@ -582,6 +581,11 @@
                 setTimeout(() => {
                     dot.remove();
                 }, 600); 
+            });
+
+            document.querySelectorAll('.span_bg').forEach(el => {
+                const radio = Math.floor(Math.random() * 26);
+                el.style.borderRadius = `${radio}px`;
             });
         </script>
 </body>
