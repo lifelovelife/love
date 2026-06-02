@@ -25,7 +25,7 @@
             transform: translate(-50%, -50%);
             animation: vanish .7s ease-out forwards;
         }
-            @keyframes vanish {
+        @keyframes vanish {
             0% {
                 transform: translate(-50%, -50%) scale(1);
                 opacity: .5;
@@ -35,7 +35,7 @@
                 transform: translate(-50%, -50%) scale(.5);
                 opacity: 0;
             }
-            }
+        }
         body {
             cursor: grab;
             overflow: hidden;
@@ -63,15 +63,15 @@
         }
         @keyframes nieve {
             0% {
+                background-position-x: 0;
                 background-position-y: 0;
             }
             100% {
+                background-position-x: 50vh;
                 background-position-y: 100vh;
             }
         }
         .info div {
-            font-family: 'Tex Gyre Heros', sans-serif;
-            font-variant-emoji: text;
             display: flex;
             flex-direction: column;
             position: absolute;
@@ -79,6 +79,10 @@
             left: 50%;
             text-align: center;
             transform: translate(-50%, -50%);
+        }
+        .info div .unicode {
+            font-family: 'Tex Gyre Heros', sans-serif;
+            font-variant-emoji: text;
         }
         a {
             color: hsl(302, 59%, 65%);
@@ -126,7 +130,7 @@
     <div class="cursor"></div>
     <section class="info">
         <div>
-            <span>&#x2747;</span>
+            <span class="unicode">&#x2747;</span>
             <span>Nicolle Bustos</span>
             <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
         </div>
