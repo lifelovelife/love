@@ -22,11 +22,15 @@
         }
         .info {
             display: flex;
+            flex-direction: column;
             position: absolute;
             width: 100vw;
             height: 100vh;
             justify-content: center;
             align-items: center;
+        }
+        a {
+            color: hsl(270, 50%, 65%);
         }
         .images > div {
             display: grid;
@@ -42,7 +46,7 @@
         .images > div span:hover {
             background-color: #ffffff;
         }
-        .images .span_bg {
+        .images > div .span_bg {
             background: white;
             animation: latido 4s ease-out infinite;
             -webkit-animation: latido 4s ease-out infinite;
@@ -57,7 +61,8 @@
 </head>
 <body>
     <section class="info">
-        nicolle.love
+        <span>nicolle.love</span>
+        <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
     </section>
         <section class="images">
             <!-- 1 -->
