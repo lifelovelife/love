@@ -9,6 +9,12 @@
         :root {
             --medida-celda: calc((100vh) / 16);
         }
+        @font-face {
+            font-family: 'Tex Gyre Heros';
+            src: url('fuentes/texgyreheros-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
         .rastro {
             position: absolute;
             width: 24px;
@@ -38,7 +44,7 @@
             height: 100vh;
             margin: 0;
             background: radial-gradient(hsl(302, 59%, 99%), hsl(302, 59%, 96%) 40%);
-            font-family: sans-serif;
+            font-family: 'Tex Gyre Heros', sans-serif;
             font-size: 14px;
             color: #593635;
             letter-spacing: .5px;
@@ -55,6 +61,11 @@
         }
         a {
             color: hsl(302, 59%, 65%);
+        }
+        button {
+            background: none;
+            border: none;
+            padding: 8px;
         }
         .imagenes > div {
             display: grid;
@@ -96,6 +107,10 @@
         <div>
             <span>Nicolle Bustos</span>
             <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
+            <audio id="frecuencia">
+                <source src="neptune.mp3" type="audio/mpeg">
+            </audio>
+            <button onclick="togglePlay()" id="play">▶</button>
         </div>
     </section>
         <section class="imagenes">
@@ -515,6 +530,7 @@
         </section>
         <script>
             const imagenes = [
+                'img/blonegmor.jpg',
                 'img/cabbage.jpg',
                 'img/cherry_cordial_candy.jpg',
                 'img/shoutao.jpg',
@@ -546,7 +562,20 @@
                 setTimeout(() => {
                     dot.remove();
                 }, 600); 
-                });
+            });
+
+            const audio = document.getElementById("frecuencia");
+                const btn = document.getElementById("play");
+
+                function togglePlay() {
+                if (audio.paused) {
+                    audio.play();
+                    btn.innerHTML = "⏸";
+                } else {
+                    audio.pause();
+                    btn.innerHTML = "▶";
+                }
+            }
         </script>
 </body>
 </html>
