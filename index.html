@@ -41,7 +41,7 @@
             overflow: hidden;
             user-select: none;
             height: 100vh;
-            margin: 0;
+            margin: 0 auto;
             background: radial-gradient(hsl(302, 59%, 99%), hsl(302, 59%, 96%) 40%);
             font-family: 'Tex Gyre Heros', sans-serif;
             font-size: 14px;
@@ -89,24 +89,24 @@
             padding: 8px;
             font-size: 16px;
         }
-        .imagenes > div {
+        .corazon {
+            display: grid;
+            grid-template-rows: repeat(16, 1fr);
+            height: 100vh;
+            justify-content: center;
+        }
+        .corazon > div {
             display: grid;
             grid-template-columns: repeat(22, 1fr);
             width: fit-content;
             height: 100%;
         }
-        .imagenes > div span {
+        .corazon > div span {
             width: var(--medida-celda);
             height: var(--medida-celda);
             
         }
-        .imagenes span:not(.span_bg) {
-            transition: .3s ease-out;
-        }
-        .imagenes span:not(.span_bg):hover {
-            background: hsla(0, 0%, 100%, .3);
-        }
-        .imagenes > div .span_bg::before {
+        .corazon > div .span_bg::before {
             position: relative;
             display: block;
             content: "";
@@ -115,11 +115,11 @@
             z-index: -1;
             background: linear-gradient(to bottom, hsl(302, 59%, 92%), hsl(302, 59%, 95%), hsl(302, 59%, 92%));
         }
-        .imagenes {
-            display: grid;
-            grid-template-rows: repeat(16, 1fr);
-            height: 100vh;
-            justify-content: center;
+        .corazon span:not(.span_bg) {
+            transition: .3s ease-out;
+        }
+        .corazon span:not(.span_bg):hover {
+            background: hsla(0, 0%, 100%, .3);
         }
     </style>
 </head>
@@ -132,7 +132,7 @@
             <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
         </div>
     </section>
-        <section class="imagenes">
+        <section class="corazon">
             <!-- 1 -->
             <div>
                 <span></span>
