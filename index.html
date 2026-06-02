@@ -39,21 +39,21 @@
         a {
             color: hsl(270, 50%, 65%);
         }
-        .images > div {
+        .imagenes > div {
             display: grid;
             grid-template-columns: repeat(22, 1fr);
             width: fit-content;
             height: 100%;
         }
-        .images > div span {
+        .imagenes > div span {
             width: var(--cell-size);
             height: var(--cell-size);
             
         }
-        .images > div .span_bg {
+        .imagenes > div .span_bg {
             background: white;
         }
-        .images {
+        .imagenes {
             display: grid;
             grid-template-rows: repeat(16, 1fr);
             height: 100vh;
@@ -68,7 +68,7 @@
             <a href="mailto:correodenicolle@gmail.com">correodenicolle@gmail.com</a>
         </div>
     </section>
-        <section class="images">
+        <section class="imagenes">
             <!-- 1 -->
             <div>
                 <span></span>
@@ -484,7 +484,7 @@
             </div>
         </section>
         <script>
-            const images = [
+            const imagenes = [
                 'img/albaricoques.jpg',
                 'img/cabbage.jpg',
                 'img/cherry_cordial_candy.jpg',
@@ -496,7 +496,7 @@
 
             document.querySelectorAll('.span_bg').forEach(span => {
                 span.addEventListener('mouseenter', () => {
-                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    const randomImage = imagenes[Math.floor(Math.random() * imagenes.length)];
                     span.style.backgroundImage = `url(${randomImage})`;
                     span.style.backgroundSize = 'cover';
                     span.style.backgroundPosition = 'center';
