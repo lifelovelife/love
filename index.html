@@ -79,8 +79,14 @@
         .imagenes span:not(.span_bg):hover {
             background: hsla(0, 0%, 100%, .3);
         }
-        .imagenes > div .span_bg {
-            background: hsl(302, 59%, 93%);
+        .imagenes > div .span_bg::before {
+            position: relative;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, hsl(302, 59%, 92%), hsl(302, 59%, 95%), hsl(302, 59%, 92%));
         }
         .imagenes {
             display: grid;
