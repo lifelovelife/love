@@ -15,6 +15,12 @@
             font-weight: normal;
             font-style: normal;
         }
+        @font-face {
+            font-family: 'Tex Gyre Heros Cn';
+            src: url('fuentes/texgyreheroscn-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
         .rastro {
             position: absolute;
             width: 24px;
@@ -28,7 +34,7 @@
         @keyframes vanish {
             0% {
                 transform: translate(-50%, -50%) scale(1);
-                opacity: .5;
+                opacity: .75;
                 filter: drop-shadow(0 0 8px hsl(302, 59%, 95%));
             }
             100% {
@@ -43,10 +49,10 @@
             height: 100vh;
             margin: 0 auto;
             background: radial-gradient(hsl(302, 59%, 99%), hsl(302, 59%, 96%) 40%);
-            font-family: 'Tex Gyre Heros', sans-serif;
-            font-size: 14px;
+            font-family: 'Tex Gyre Heros Cn', sans-serif;
+            font-size: 15px;
             color: hsl(219, 80%, 26%);
-            letter-spacing: .5px;
+            letter-spacing: .75px;
             line-height: 1.5;
         }
         body::before {
@@ -109,6 +115,11 @@
             width: var(--medida-celda);
             height: var(--medida-celda);
         }
+        .corazon > div .span_bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
         .corazon > div .span_bg::before {
             position: relative;
             display: block;
@@ -117,12 +128,6 @@
             height: 100%;
             z-index: -1;
             background: linear-gradient(to bottom, hsl(302, 59%, 92%), hsl(302, 59%, 95%), hsl(302, 59%, 92%));
-        }
-        .corazon span:not(.span_bg) {
-            transition: .3s ease-out;
-        }
-        .corazon span:not(.span_bg):hover {
-            background: hsla(0, 0%, 100%, .3);
         }
     </style>
 </head>
@@ -550,6 +555,7 @@
                 <span></span>
             </div>
         </section>
+        
         <script>
             const imagenes = [
                 'img/blonegmor.jpg',
@@ -558,38 +564,34 @@
                 'img/conejo.jpg',
                 'img/shoutao.jpg',
                 'img/silica_gel.jpg',
+                '',
                 ''
             ];
 
+            const fondo = span => {
+                span.style.backgroundImage = `url(${imagenes[Math.floor(Math.random() * imagenes.length)]})`;
+                span.style.borderRadius = `${Math.floor(Math.random() * 26)}px`;
+            };
+
             document.querySelectorAll('.span_bg').forEach(span => {
-                span.addEventListener('mouseenter', () => {
-                    const randomImage = imagenes[Math.floor(Math.random() * imagenes.length)];
-                    span.style.backgroundImage = `url(${randomImage})`;
-                    span.style.backgroundSize = 'cover';
-                    span.style.backgroundPosition = 'center';
-                    span.style.backgroundRepeat = 'no-repeat';
-                });
+                fondo(span);
+                span.addEventListener('mouseenter', () => fondo(span));
             });
 
             document.addEventListener("mousemove", (e) => {
                 const container = document.querySelector(".cursor");
-                const dot = document.createElement("div");
+                const punto = document.createElement("div");
                 
-                dot.classList.add("rastro");
+                punto.classList.add("rastro");
                 
-                dot.style.left = `${e.clientX}px`;
-                dot.style.top = `${e.clientY}px`;
+                punto.style.left = `${e.clientX}px`;
+                punto.style.top = `${e.clientY}px`;
                 
-                container.appendChild(dot);
+                container.appendChild(punto);
                 
                 setTimeout(() => {
-                    dot.remove();
+                    punto.remove();
                 }, 600); 
-            });
-
-            document.querySelectorAll('.span_bg').forEach(el => {
-                const radio = Math.floor(Math.random() * 26);
-                el.style.borderRadius = `${radio}px`;
             });
         </script>
 </body>
