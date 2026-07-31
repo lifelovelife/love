@@ -1,5 +1,5 @@
 :root {
-            --celda: calc((100vh) / 16);
+            --celda: calc((100vh) / 17);
         }
         @font-face {
             font-family: 'Tex Gyre Heros';
