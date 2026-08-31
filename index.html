@@ -12,10 +12,51 @@
             -webkit-user-select: none;
             user-select: none;
         }
+        .huella {
+            position: absolute;
+            width: 128px;
+            height: 128px;
+            background-image: url("HUELLAS.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            animation: vanish .7s ease-out forwards;
+            z-index: 99999;
+        }
+        @keyframes vanish {
+            from {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
     </style>
 <body style="background: #defe3fcc; height: 100vh; margin: 0; overflow: hidden; display: flex; justify-content: center;">
+    <div class="cursor"></div>
     <img src="PRONTO.png" style="width: 100vw;">
     <img src="DANCING_BANANA.gif" style="position: absolute;">
     <img src="ESPACIO.jpg" style="width: 100vw; height: 100vh; position: absolute; mix-blend-mode: color-dodge;">
+
+<script>
+    document.addEventListener('mousemove', (e) => {
+        const contenedor = document.querySelector('.cursor');
+        const punto = document.createElement('div');
+
+        punto.classList.add('huella');
+
+        punto.style.left = `${e.clientX}px`;
+        punto.style.top = `${e.clientY}px`;
+
+        contenedor.appendChild(punto);
+
+        setTimeout(() => {
+            punto.remove();
+        }, 600);
+    });
+</script>
 </body>
 </html>
