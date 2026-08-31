@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolle Bustos</title>
     <link rel="icon" type="image/png" href="FAVICON.png">
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <style>
         * {
             -webkit-user-drag: none;
-            user-drag: none;
             -webkit-user-select: none;
             user-select: none;
         }
+
         .huella {
             position: absolute;
             width: 128px;
@@ -24,6 +27,7 @@
             animation: vanish .7s ease-out forwards;
             z-index: 99999;
         }
+
         @keyframes vanish {
             from {
                 opacity: .3;
@@ -34,29 +38,110 @@
                 transform: translate(-50%, -50%) scale(0.5);
             }
         }
+
+        #reproductor {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        .musica {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            position: absolute;
+            top: 1%;
+            right: 1%;
+        }
+
+        button {
+            width: 56px;
+            height: 56px;
+            padding: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #f511cf1c;
+            color: #884dff;
+            border-radius: 50%;
+        }
     </style>
-<body style="background: #defe3fcc; height: 100vh; margin: 0; overflow: hidden; display: flex; justify-content: center;">
+</head>
+
+<body style="background: #defe3fcc; height: 100vh; margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center;">
     <div class="cursor"></div>
-    <img src="PRONTO.png" style="width: 100vw;">
-    <img src="DANCING_BANANA.gif" style="position: absolute;">
-    <img src="ESPACIO.jpg" style="width: 100vw; height: 100vh; position: absolute; mix-blend-mode: color-dodge;">
+    <img src="PRONTO.png" style="width: 100vw; height: 100vh; object-fit: fill;">
+    <img src="DANCING_BANANA.gif" style="position: absolute; top: 0;">
+    <div class="musica">
+        <button id="play" onclick="toggleAudio()">♫</button>
+    </div>
+    <div id="reproductor"></div>
+    <img src="ESPACIO.jpg" style="width: 100vw; height: 100vh; position: absolute; mix-blend-mode: color-dodge; pointer-events: none; z-index: 5;">
 
-<script>
-    document.addEventListener('mousemove', (e) => {
-        const contenedor = document.querySelector('.cursor');
-        const punto = document.createElement('div');
+    <script>
+        const videoId = 'JCFxfdGSclk';
+        let player;
 
-        punto.classList.add('huella');
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('reproductor', {
+                height: '0',
+                width: '0',
+                videoId: videoId,
+                playerVars: {
+                    'playsinline': 1,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'start': 120
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
 
-        punto.style.left = `${e.clientX}px`;
-        punto.style.top = `${e.clientY}px`;
+        function toggleAudio() {
+            if (!player) return;
 
-        contenedor.appendChild(punto);
+            const state = player.getPlayerState();
+            if (state === 1) {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
+            }
+        }
 
-        setTimeout(() => {
-            punto.remove();
-        }, 600);
-    });
-</script>
+        function onPlayerStateChange(event) {
+            const btn = document.getElementById('play');
+
+            if (event.data === YT.PlayerState.PLAYING) {
+                btn.textContent = '⏸';
+            } 
+            
+            else if (event.data === YT.PlayerState.ENDED) {
+                player.seekTo(120, true);
+                player.playVideo();
+            } 
+            
+            else {
+                btn.textContent = '♫';
+            }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const contenedor = document.querySelector('.cursor');
+            if (!contenedor) return;
+            
+            const punto = document.createElement('div');
+            punto.classList.add('huella');
+            punto.style.left = `${e.clientX}px`;
+            punto.style.top = `${e.clientY}px`;
+
+            contenedor.appendChild(punto);
+
+            setTimeout(() => {
+                punto.remove();
+            }, 600);
+        });
+    </script>
 </body>
 </html>
